@@ -19,9 +19,8 @@ function getSiteData() {
     if (scriptTag) {
         const adminUrl = scriptTag.dataset.sodoSearch;
         const apiKey = scriptTag.dataset.key;
-        const appVersion = scriptTag.dataset.version;
         const stylesUrl = scriptTag.dataset.styles;
-        return {adminUrl, apiKey, appVersion, stylesUrl};
+        return {adminUrl, apiKey, stylesUrl};
     }
     return {};
 }
@@ -31,14 +30,13 @@ function setup() {
 }
 
 function init() {
-    const {adminUrl, apiKey, appVersion, stylesUrl} = getSiteData();
+    const {adminUrl, apiKey, stylesUrl} = getSiteData();
     const adminBaseUrl = (adminUrl || window.location.origin)?.replace(/\/+$/, '');
     setup();
     ReactDOM.render(
         <React.StrictMode>
             <App
                 adminUrl={adminBaseUrl} apiKey={apiKey}
-                appVersion={appVersion}
                 stylesUrl={stylesUrl}
             />
         </React.StrictMode>,

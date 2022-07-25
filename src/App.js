@@ -136,7 +136,6 @@ export default class App extends React.Component {
                 page: 'search',
                 showPopup: this.state.showPopup,
                 adminUrl: this.props.adminUrl,
-                appVersion: this.props.appVersion,
                 stylesUrl: this.props.stylesUrl,
                 searchIndex: this.state.searchIndex,
                 indexComplete: this.state.indexComplete,
